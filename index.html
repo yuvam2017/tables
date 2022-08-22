@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ques 4</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+		*{
+			margin:0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body {
+			font-family: 'Space Mono', monospace;
+		}
+
+		.font-space {
+			font-family: 'Space Mono', monospace;
+		}
+		.table-item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction : column;
+			padding: 1rem;
+			margin: 1rem;
+			width: 12%;
+		}
+		
+		.table-items {
+			font-weight: 500;
+			font-size: 1rem;
+		}
+
+	</style>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>	
+
+	<div id="table" class="flex flex-wrap justify-center items-center">
+	
+	</div>
+
+	<script>
+		let color = ['red', 'indigo', 'emerald', 'yellow', 'slate' ,'purple' , 'orange' , 'pink',"teal"];
+		let targetElem = document.getElementById("table");
+
+		const makeTable = (number,color,elem) => {
+			let divElem = document.createElement("div");
+			divElem.setAttribute("class",`bg-${color}-200 table-item`)
+			targetElem.appendChild(divElem);
+			for(let j =1;j<11;j++){
+				let pElem = document.createElement("p");
+				pElem.setAttribute("class","table-items");
+				pElem.innerText = `${i} X ${j} = ${i*j}`;
+				divElem.appendChild(pElem);
+			}
+		}
+		let i = 2
+	
+		const tableInterval = setInterval(()=>{
+			
+			makeTable(i,color[i-2],targetElem);
+			i+=1;
+			if (i>10) {
+				clearTableInterval();
+			}
+		},100)
+		
+		const clearTableInterval = () => {
+			clearInterval(tableInterval);
+		} 
+
+	</script>							
+</body>
+</html>
