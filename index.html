@@ -26,7 +26,6 @@
 			flex-direction : column;
 			padding: 1rem;
 			margin: 1rem;
-			width: 12%;
 		}
 		
 		.table-items {
@@ -34,12 +33,13 @@
 			font-size: 1rem;
 		}
 
+
 	</style>
 	<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>	
 
-	<div id="table" class="flex flex-wrap flex-col lg:flex-row justify-center items-center">
+	<div id="table" class="flex flex-wrap justify-center items-center">
 	
 	</div>
 
@@ -53,7 +53,7 @@
 			targetElem.appendChild(divElem);
 			for(let j =1;j<11;j++){
 				let pElem = document.createElement("p");
-				pElem.setAttribute("class","table-items");
+				pElem.setAttribute("class","table-items w-[12%] w-auto");
 				pElem.innerText = `${i} X ${j} = ${i*j}`;
 				divElem.appendChild(pElem);
 			}
